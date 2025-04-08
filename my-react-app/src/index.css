@@ -1,0 +1,425 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+  width: 25%;
+  background-color: #1c1c1c;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-wrapper {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 20px auto;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+.profile-wrapper::before {
+  content: '';
+  position: absolute;
+  top: -5px;
+  left: 0px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: conic-gradient(
+    #a259ff,
+    #6a00ff,
+    #9a8fff
+  );
+  animation: spin 4s linear infinite;
+  z-index: -1;
+  filter: blur(3px);
+}
+
+.profile-pic {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #ffffff00;
+  z-index: 2;
+  position: relative;
+}
+
+/* Animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0turn);
+  }
+  100% {
+    transform: rotate(1turn);
+  }
+}
+
+.sidebar h1 {
+  font-size: 24px;
+  margin-bottom: 5px;
+}
+
+.role {
+  color: #a259ff;
+  margin-bottom: 20px;
+}
+
+.social-icons i {
+  margin: 0 8px;
+  color: white;
+  cursor: pointer;
+}
+
+.social-icons i:hover {
+  color: #a259ff;
+}
+
+.menu {
+  margin-top: 40px;
+}
+
+.menu i {
+  display: block;
+  margin: 20px auto;
+  font-size: 20px;
+  color: gray;
+  cursor: pointer;
+}
+
+.menu i:hover {
+  color: #a259ff;
+}
+
+/* Main content */
+.main {
+  flex: 1;
+  padding: 40px;
+}
+
+.about h2 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.info {
+  color: #a259ff;
+  margin-top: 10px;
+}
+
+.description {
+  color: #ccc;
+  max-width: 600px;
+}
+
+/* Services */
+.services {
+  margin-top: 40px;
+}
+
+.services h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.service-cards {
+  display: flex;
+  gap: 20px;
+}
+
+.card {
+  background-color: #1e1e1e;
+  padding: 20px;
+  border-radius: 10px;
+  width: 45%;
+}
+
+.card i {
+  font-size: 24px;
+  color: #a259ff;
+  margin-bottom: 10px;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #aaa;
+}
+.split-text-container {
+  margin-left: 2.5rem;
+  display: flex;
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #fff;
+  overflow: hidden;
+}
+
+.text-part {
+  display: inline-block;
+  position: relative;
+  transform: translateX(0);
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
+.text-part.left {
+  transform: translateX(-200%);
+  animation-name: slide-in-left;
+}
+
+.text-part.right {
+  transform: translateX(200%);
+  animation-name: slide-in-right;
+}
+.air{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+@keyframes slide-in-left {
+  0% {
+      transform: translateX(-200%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+      transform: translateX(200%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+i{
+  font-size: 25px;
+  text-decoration: none;
+}
+/* Hamburger button */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 27px;
+  font-size: 24px;
+  color: white;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+/* Menu (sidebar style) */
+.menu {
+  position: fixed;
+  top: 0;
+  left: -100px; /* ซ่อนนอกจอไว้ก่อน */
+  background-color: #1e1e1e;
+  height: 100vh;
+  width: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+  gap: 30px;
+  transition: left 0.3s ease;
+  z-index: 999;
+}
+
+.menu i {
+  font-size: 20px;
+  color: #aaa;
+  cursor: pointer;
+}
+
+.menu i:hover {
+  color: #a259ff;
+}
+
+
+.menu.open {
+  left: 0;
+}
+.info-section {
+  text-align: left;
+  width: 350px;
+  background-color: #fef6f6;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 40px;
+  font-family: 'Segoe UI', sans-serif;
+  color: #111;
+}
+
+.info-box {
+  margin-bottom: 30px;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.info-title {
+  background: linear-gradient(135deg, #6a1b9a, #8e24aa); /* Purple gradient */
+  color: white;
+  font-size: 18px;
+  padding: 8px 12px;
+  border-radius: 5px 5px 0 0;
+  margin: -10px -10px 10px -10px;
+}
+/* Layout */
+.resume-container {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f1ed;
+  color: #420707;
+  padding: 40px;
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Sections */
+.resume-section {
+  margin-bottom: 40px;
+}
+
+
+.section-title {
+  font-size: 24px;
+  color: #be3de2;
+  border-bottom: 2px solid #ffffff;
+  padding-bottom: 6px;
+  margin-bottom: 15px;
+}
+
+/* Lists */
+.section-list {
+  list-style-type: disc;
+  padding-left: 25px;
+}
+
+.list-item {
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+/* Portfolio Section */
+.portfolio-section {
+  margin-top: 25px;
+  margin-left: -20px;
+  padding: 0 20px;
+}
+
+.portfolio-title {
+  font-size: 24px;
+  color: #aa44ff;
+  margin-bottom: 15px;
+}
+
+/* Scrollable container */
+.portfolio-container {
+  display: flex;
+  overflow-x: hidden;
+  gap: 16px;
+  padding-bottom: 10px;
+
+}
+
+/* Scrollbar Styling for WebKit browsers */
+.portfolio-container::-webkit-scrollbar {
+  height: 8px;
+}
+.portfolio-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.portfolio-container::-webkit-scrollbar-thumb {
+  background-color: #aa44ff;
+  border-radius: 10px;
+}
+
+/* Portfolio Item */
+.portfolio-item {
+  flex: 0 0 auto;
+  margin-top: 5px;
+  margin-left: 5px;
+  width: 290px;
+  height: 190px;
+  background-color: #1e1e1e;
+  border: 2px solid #aa44ff;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+  transform: scale(1.05);
+}
+.project-img{
+  margin-top: 3.5px;
+  width: 285px;
+  height: 185px;
+  border-radius: 8px;
+}
+/* Internship Section */
+.internship-section {
+  margin-top: 20px;
+  padding: 50px;
+  background-color: #1a1a1a;
+  border-radius: 12px;
+  color: #ffffff;
+  box-shadow: 0 0 10px rgba(170, 68, 255, 0.3);
+}
+
+/* Section Title */
+.internship-title {
+  font-size: 24px;
+  color: #aa44ff;
+  margin-bottom: 15px;
+}
+
+/* Description */
+.internship-description {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #dddddd;
+  margin-bottom: 25px;
+}
+
+/* Soft Skill Title */
+.softskill-title {
+  font-size: 20px;
+  color: #aa44ff;
+  margin-bottom: 10px;
+}
+
+/* Soft Skills List */
+.softskill-list {
+  list-style-type: disc;
+  padding-left: 25px;
+}
+
+.softskill-item {
+  margin-bottom: 8px;
+  color: #cccccc;
+  font-size: 15px;
+}
