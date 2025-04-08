@@ -268,8 +268,6 @@ i{
 .menu i:hover {
   color: #a259ff;
 }
-
-
 .menu.open {
   left: 0;
 }
